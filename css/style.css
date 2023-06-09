@@ -8,41 +8,28 @@ body{
     align-items: center;
 }
 
-.contenedorGeneral{
-
-    height: 100vh;
-    width: 100vw;
+.contenedorGeneral, .contenedorLogo, .botonComenzar, .titulo, .row{
 
     display: flex;
     justify-content: center;
     align-items: center;
-
-    background-color: black;
 }
 
 .contenedorLogo{
 
-    height: 50vh;
-    width: 50vw;
-
     background-color: lightgray;
 
-    display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 #botonComenzar{
     
     height: 2rem;
-    width: 8rem;
+    width: 10rem;
 
     background-color: grey;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    border-radius: 2rem;
 }
 
 .titulo{
@@ -52,11 +39,14 @@ body{
 
     background-color: gray;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
     margin-bottom: 5rem;
 
     font-weight: bold;
     font-size: 3rem;
+}
+
+#nombre{
+
+    width: 50%;
+
 }

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Opciones</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 
@@ -12,8 +12,46 @@
 </head>
 <body>
     
+    <div class="container-fluid w-100 h-100 contenedorGeneral">
+
+        <div class="container-fluid h-50 contenedorLogo">
+
+            <div class="row h-25 w-100 d-flex flex-column g-2d">
+
+            Nombre de usuario:
+
+            <input id="nombre" type="text" placeholder="Introduce tu nombre de usuario.">
+
+            </div>
+
+            <div id="dificultad" class="row g-2" h-25 w-100">
+
+                <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" checked>
+
+                <label class="btn btn-secondary" for="option1">Fácil</label>
+
+                <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off">
+
+                <label class="btn btn-secondary" for="option2">Intermedio</label>
+
+                <input type="radio" class="btn-check" name="options" id="option3" autocomplete="off">
+
+                <label class="btn btn-secondary" for="option3">Difícil</label>
+
+            </div>
+
+            <div class="row h-25 w-100">
+
+                <div onclick="" class="botonComenzar" id="botonComenzar">JUGAR</div>
+
+            </div>
+
+
+        </div>
+
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-    <script src=""></script>
+    <script src="../js/datos.js"></script>
 </body>
 </html>
