@@ -8,7 +8,7 @@ body{
     align-items: center;
 }
 
-.contenedorGeneral, .contenedorLogo, .botonComenzar, .titulo, .row{
+.contenedorGeneral, .contenedorLogo, .botonComenzar, .titulo, .row, #dificultad label{
 
     display: flex;
     justify-content: center;
@@ -39,6 +39,48 @@ body{
 	position: relative;
 	padding: 1px;
 	border-radius: 8px;
+
+    user-select: none;
+}
+
+#botonComenzar:hover{
+    background-color: #5c3bc0;
+    box-shadow: inset #3a2380 0px -5px;
+}
+
+#botonComenzar:active{
+    background-color: #5c3bc0;
+    box-shadow: inset #3a2380 0px 5px;
+}
+
+#dificultad label{
+    height: 4rem;
+    width: 10rem;
+
+    margin-left: 2rem;
+
+    background-color: #7f5af0;
+    color: #fffffe;
+
+    font-size: 1.5rem;
+
+    border-radius: 0.2rem;
+
+	position: relative;
+	padding: 1px;
+	border-radius: 8px;
+
+    user-select: none;
+}
+
+#dificultad label:hover{
+    background-color: #5c3bc0;
+    box-shadow: inset #3a2380 0px -5px;
+}
+
+#dificultad label:active{
+    background-color: #5c3bc0;
+    box-shadow: inset #3a2380 0px 5px;
 }
 
 .titulo{
@@ -59,6 +101,10 @@ body{
 
 #nombre{
 
-    width: 50%;
+    width: 10%;
+    height: 30%;
 
+    border-radius: 1rem;
+
+    box-shadow: #16161a 0px -5px;
 }
