@@ -15,29 +15,41 @@ body{
     align-items: center;
 }
 
-.contenedorLogo{
+.contenedorGeneral{
+    background-color: #16161a;
+}
 
-    background-color: lightgray;
+.contenedorLogo{
 
     flex-direction: column;
 }
 
 #botonComenzar{
     
-    height: 2rem;
-    width: 10rem;
+    height: 5rem;
+    width: 15rem;
 
-    background-color: grey;
+    background-color: #7f5af0;
+    color: #fffffe;
 
-    border-radius: 2rem;
+    font-size: 1.5rem;
+
+    border-radius: 0.2rem;
+
+	position: relative;
+	padding: 1px;
+	border-radius: 8px;
 }
 
 .titulo{
 
-    height: 10rem;
-    width: 20rem;
+    height: 100%;
+    width: 100%;
 
-    background-color: gray;
+    background-image: url("../img/logo.png");
+    background-size: inherit;
+    background-repeat: no-repeat;
+    background-position: center;
 
     margin-bottom: 5rem;
 
