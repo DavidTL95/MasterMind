@@ -8,7 +8,7 @@ body{
     align-items: center;
 }
 
-.contenedorGeneral, .contenedorLogo, .botonComenzar, .titulo, .row, #dificultad label{
+.contenedorGeneral, .contenedorLogo, .botonComenzar, .titulo, .row, #dificultad label, .contenedorColorPicker{
 
     display: flex;
     justify-content: center;
@@ -53,9 +53,9 @@ body{
     box-shadow: inset #3a2380 0px 5px;
 }
 
-#dificultad label{
+/* #dificultad label{
     height: 4rem;
-    width: 10rem;
+    width: 2rem;
 
     margin-left: 2rem;
 
@@ -71,9 +71,9 @@ body{
 	border-radius: 8px;
 
     user-select: none;
-}
+} */
 
-#dificultad label:hover{
+/* #dificultad label:hover{
     background-color: #5c3bc0;
     box-shadow: inset #3a2380 0px -5px;
 }
@@ -81,7 +81,7 @@ body{
 #dificultad label:active{
     background-color: #5c3bc0;
     box-shadow: inset #3a2380 0px 5px;
-}
+} */
 
 .titulo{
 
@@ -93,7 +93,7 @@ body{
     background-repeat: no-repeat;
     background-position: center;
 
-    margin-bottom: 5rem;
+    /* margin-bottom: 5rem; */
 
     font-weight: bold;
     font-size: 3rem;
@@ -101,10 +101,52 @@ body{
 
 #nombre{
 
-    width: 10%;
+    width: 20%;
     height: 30%;
 
     border-radius: 1rem;
 
     box-shadow: #16161a 0px -5px;
+}
+
+.contenedorColorPicker{
+
+    margin-top: 2rem;
+
+}
+
+.contenedorColorPicker input{
+
+    height: 4rem;
+    width: 4rem;
+}
+
+#mostrarColor1, #mostrarColor2, #mostrarColor3, #mostrarColor4{
+
+    height: 4rem;
+    width: 4rem;
+
+    border-radius: 50%;
+
+}
+
+.contenedorColores{
+    display: flex;
+    flex-direction: row;
+}
+
+#color1, #color2, #color3, #color4{
+    height: 5rem;
+    width: 5rem;
+
+    margin: 2rem;
+
+    border: 1px solid #7f5af0;
+}
+
+#mostrarNombre, #mostrarColor1, #mostrarColor2, #mostrarColor3, #mostrarColor4{
+
+    width: 20%;
+    height: 100%;
+
 }
