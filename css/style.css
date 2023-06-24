@@ -24,7 +24,7 @@ body{
     flex-direction: column;
 }
 
-#botonComenzar{
+#botonComenzar, .dif{
     
     height: 5rem;
     width: 15rem;
@@ -43,45 +43,15 @@ body{
     user-select: none;
 }
 
-#botonComenzar:hover{
+#botonComenzar:hover, .dif:hover{
     background-color: #5c3bc0;
     box-shadow: inset #3a2380 0px -5px;
 }
 
-#botonComenzar:active{
+#botonComenzar:active, .dif:active{
     background-color: #5c3bc0;
     box-shadow: inset #3a2380 0px 5px;
 }
-
-/* #dificultad label{
-    height: 4rem;
-    width: 2rem;
-
-    margin-left: 2rem;
-
-    background-color: #7f5af0;
-    color: #fffffe;
-
-    font-size: 1.5rem;
-
-    border-radius: 0.2rem;
-
-	position: relative;
-	padding: 1px;
-	border-radius: 8px;
-
-    user-select: none;
-} */
-
-/* #dificultad label:hover{
-    background-color: #5c3bc0;
-    box-shadow: inset #3a2380 0px -5px;
-}
-
-#dificultad label:active{
-    background-color: #5c3bc0;
-    box-shadow: inset #3a2380 0px 5px;
-} */
 
 .titulo{
 

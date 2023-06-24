@@ -24,23 +24,16 @@
 
             <div class="row h-50 w-100 d-flex flex-column g-2d">
 
-            <input id="nombre" type="text" placeholder="Nombre de usuario.">
+            <input onchange="guardarNombre()" id="nombre" type="text" placeholder="Nombre de usuario.">
 
             </div>
 
-            <div id="dificultad" class="row g-2 h-25 w-25">
+            <div id="dificultad" class="row g-2 h-25 w-75">
 
-                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                    <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
-                    <label class="btn btn-outline-primary" for="btnradio1">Fácil</label>
+                  <button onclick="guardarDificultad(1)" name="facil" type="button" class="dif">Fácil</button>
+                  <button onclick="guardarDificultad(2)" name="medio" type="button" class="dif">Medio</button>
+                  <button onclick="guardarDificultad(3)" name="pro" type="button" class="dif">Pro</button>
                   
-                    <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-                    <label class="btn btn-outline-primary" for="btnradio2">Medio</label>
-                  
-                    <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
-                    <label class="btn btn-outline-primary" for="btnradio3">Pro</label>
-                  </div>
-
             </div>
 
             <div class="contenedorColorPicker h-25 w-100">
@@ -51,16 +44,16 @@
 
             <div class="contenedorColores">
 
-                <div id="color1"></div>
-                <div id="color2"></div>
-                <div id="color3"></div>
-                <div id="color4"></div>
+                <div class="color" id="color1"></div>
+                <div class="color" id="color2"></div>
+                <div class="color" id="color3"></div>
+                <div class="color" id="color4"></div>
     
             </div>
 
             <div class="row w-100">
 
-                <div onclick="guardarDatos()" class="botonComenzar" id="botonComenzar">JUGAR</div>
+                <div onclick="jugar()" class="botonComenzar" id="botonComenzar">JUGAR</div>
 
             </div>
 
