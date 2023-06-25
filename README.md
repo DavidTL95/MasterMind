@@ -1,4 +1,4 @@
-![Bootstrap](https://github.com/DavidTL95/MasterMind/assets/134488502/8016cc8a-987a-413c-a6a5-a620524d6a74)# Welcome to my MasterMind
+# Welcome to my MasterMind
 
 <details>
   <summary>Contenido 📝</summary>
@@ -28,10 +28,10 @@ Decidí darle una estética ciberpunk, para darle ese toque más futurista a un 
 
 ## Stack
 <div align="center">
-  ![HTML](https://github.com/DavidTL95/MasterMind/assets/134488502/e77999c4-f996-4b3d-9bb9-df477327285b)
-  ![CSS3](https://github.com/DavidTL95/MasterMind/assets/134488502/78c1c639-116a-40d9-8ed0-c87f4f4999c2)
-  ![JS](https://github.com/DavidTL95/MasterMind/assets/134488502/59609548-3e20-4554-932f-0baf25869967)
-  ![Bootstrap](https://github.com/DavidTL95/MasterMind/assets/134488502/9f4d64d1-b8bf-4aa7-9907-8dc62b326a9a)
+  <img src= "https://github.com/DavidTL95/MasterMind/assets/134488502/e77999c4-f996-4b3d-9bb9-df477327285b"/>
+  <img src= "https://github.com/DavidTL95/MasterMind/assets/134488502/78c1c639-116a-40d9-8ed0-c87f4f4999c2"/>
+  <img src= "https://github.com/DavidTL95/MasterMind/assets/134488502/59609548-3e20-4554-932f-0baf25869967"/>
+  <img src= "https://github.com/DavidTL95/MasterMind/assets/134488502/8016cc8a-987a-413c-a6a5-a620524d6a74"/>
  </div>
 
 ## Vistas
