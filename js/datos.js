@@ -12,23 +12,6 @@ const guardarDificultad = (dificultad) => {
     sessionStorage.setItem("dificultad", dificultad);
 }
 
-// let color1 = document.getElementById("color1");
-// let color2 = document.getElementById("color2");
-// let color3 = document.getElementById("color3");
-// let color4 = document.getElementById("color4");
-
-//BOTÓN IR A LA PANTALLA DE JUEGO.
-let botonComenzar = document.getElementById("botonComenzar");
-
-//FUNCIÓN IR A LA PANTALLA DE JUEGO.
-const jugar = () => {
-    if(nombre.value != ""){
-        window.location.href = "../pages/juego.html";
-    }else{
-        nombre.style.borderColor = "red";
-    }
-}
-
 //OBETNER LOS DIVS QUE ALBERGARÁN LOS COLORES + COLOR PICKER.
 
 let colores = document.getElementsByClassName('color');
@@ -68,6 +51,20 @@ colorPicker.addEventListener(('change'), (e) => {
     }
 
 })
+
+//BOTÓN IR A LA PANTALLA DE JUEGO.
+let botonComenzar = document.getElementById("botonComenzar");
+
+//FUNCIÓN IR A LA PANTALLA DE JUEGO.
+const jugar = () => {
+    if(nombre.value != ""){
+        window.location.href = "../pages/juego.html";
+    }else if(colores[3].style.backgroundColor === ""){
+        colorPicker.style.borderColor = "red";
+    }else{
+        nombre.style.borderColor = "red";
+    }
+}
 
 
 
