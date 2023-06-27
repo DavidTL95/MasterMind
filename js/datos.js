@@ -46,7 +46,7 @@ colorPicker.addEventListener(('change'), (e) => {
         colores[3].style.backgroundColor = e.target.value;
         coloresGuardados.push(e.target.value);
         
-        sessionStorage.setItem("colores", coloresGuardados)
+        sessionStorage.setItem("colores", JSON.stringify(coloresGuardados))
 
     }
 
