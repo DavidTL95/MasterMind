@@ -32,7 +32,6 @@ Decidí darle una estética ciberpunk, para darle ese toque más futurista a un 
   <img src= "https://github.com/DavidTL95/MasterMind/assets/134488502/78c1c639-116a-40d9-8ed0-c87f4f4999c2"/>
   <img src= "https://github.com/DavidTL95/MasterMind/assets/134488502/59609548-3e20-4554-932f-0baf25869967"/>
   <img src= "https://github.com/DavidTL95/MasterMind/assets/134488502/8016cc8a-987a-413c-a6a5-a620524d6a74"/>
-  <img src= "https://github.com/DavidTL95/MasterMind/assets/134488502/2bd76a0a-ba31-4881-80ba-8e58f4a7ed64"/>
  </div>
 
 ## Vistas
@@ -42,6 +41,8 @@ Settings
 ![Opciones](https://github.com/DavidTL95/MasterMind/assets/134488502/6f2ca74d-eec5-4fbf-9d17-c52e5d7c4916)
 Game
 ![Juego](https://github.com/DavidTL95/MasterMind/assets/134488502/c504984b-0b92-43c1-9a86-5483f9e7d0cf)
+Game final.
+![Captura](https://github.com/DavidTL95/MasterMind/assets/134488502/eb420448-7ff1-42d3-aaa3-43327b638c49)
 
 ## Licencia
 Este proyecto se encuentra bajo licencia de "David Torrado Lago."
