@@ -11,7 +11,6 @@ let numeroColores = 0;
 let turnos = 0
 
 const tablero = document.getElementById("jugador");
-const divRow = document.getElementById("row");
 const divResultado = document.getElementById("resultado");
 
 
@@ -77,13 +76,19 @@ const divResultado = document.getElementById("resultado");
 
     //CREACIÓN DE LOS CUATRO CÍRCULOS INICIALES. ✅
     function crearDivsJugador() {
+
+        const filaJugador = document.createElement('div');
+        filaJugador.classList.add('row');
+        filaJugador.classList.add('activa');
+        tablero.appendChild(filaJugador);
      
         for(let i = 0; i < 4; i++){
+
             const circulosColores = document.createElement('div');
             circulosColores.style.backgroundColor = colores[0];
             circulosColores.className = 'circulos';
             circulosColores.addEventListener('click', () => seleccionColor(circulosColores));
-            row.appendChild(circulosColores);
+            filaJugador.appendChild(circulosColores);
         }
         
     }
@@ -112,21 +117,9 @@ const divResultado = document.getElementById("resultado");
             return;
         }
 
-        const adivinar = Array.from(divRow.children).map(circulo => circulo.style.backgroundColor);
+        const ultimaRow = document.getElementsByClassName("activa");
+        const adivinar = Array.from(ultimaRow.children).map(circulo => rgbToHex(circulo.style.backgroundColor));
         const resultado = obtenerResultado(adivinar);
-
-        //CREACIÓN NUEVA ROW JUGADOR.
-            // const filaJugador = document.createElement('div');
-            // filaJugador.classList.add('row');
-            // tablero.appendChild(filaJugador);
-        
-            // for(let i = 0; i < 4; i++){
-            //     const circulosColores = document.createElement('div');
-            //     circulosColores.style.backgroundColor = colores[0];
-            //     circulosColores.className = 'circulos';
-            //     circulosColores.addEventListener('click', () => seleccionColor(circulosColores));
-            //     filaJugador.appendChild(circulosColores);
-            // }
 
         //CREAR NUEVA ROW EN EL DIV RESULTADO.
             const resultadoFila = document.createElement('div');
@@ -170,6 +163,19 @@ const divResultado = document.getElementById("resultado");
                 alert('El código secreto era: ' + boss.join(', '));
                 resetGame();
             }
+
+        //CREACIÓN NUEVA ROW JUGADOR.
+            const filaJugador = document.createElement('div');
+            filaJugador.classList.add('row');
+            tablero.appendChild(filaJugador);
+                
+                for(let i = 0; i < 4; i++){
+                    const circulosColores = document.createElement('div');
+                    circulosColores.style.backgroundColor = colores[0];
+                    circulosColores.className = 'circulos';
+                    circulosColores.addEventListener('click', () => seleccionColor(circulosColores));
+                    filaJugador.appendChild(circulosColores);
+                }
         }
 
         function obtenerResultado(res) {
@@ -177,9 +183,9 @@ const divResultado = document.getElementById("resultado");
             const copiaResultado = [...boss];
                 res.forEach((color, i) => {
                     if(color === copiaResultado[i]) {
-                        const circuloResultado = document.createElement('div');
-                        circuloResultado.className = 'color';
-                        resultadoFila.appendChild(circuloResultado);
+                        // const circuloResultado = document.createElement('div');
+                        // circuloResultado.className = 'color';
+                        // resultadoFila.appendChild(circuloResultado);
                         resultado.push('black');
                         copiaResultado[i] = null;
                     }
