@@ -11,7 +11,8 @@ let numeroColores = 0;
 let turnos = 0
 
 const tablero = document.getElementById("jugador");
-const check = document.getElementById('check');
+const divRow = document.getElementById("row");
+const divResultado = document.getElementById("resultado");
 
 
     //CREACIÓN DEL SWITCH PARA ASIGNAR CANTIDAD DE TURNOS Y COLORES DEPENDIENDO DE LA DIFICULTAD. ✅
@@ -36,11 +37,31 @@ const check = document.getElementById('check');
     //CREACIÓN ARRAY ALEATORIO BOSS. ✅
     const generarBoss = () => {
         const codigo = [];
-        for (let i = 0; i < 4; i++) {
-          const random = Math.floor(Math.random() * colores.length);
-          codigo.push(colores[random]);
+        switch(dificultad){
+            case '1':
+                for (let i = 0; i < 4; i++) {
+                    const random = Math.floor(Math.random() * colores.length);
+                    codigo.push(colores[random]);
+                  }
+                  return codigo;
+
+            case '2':
+                for (let i = 0; i < 5; i++) {
+                    const random = Math.floor(Math.random() * colores.length);
+                    codigo.push(colores[random]);
+                  }
+                  return codigo;
+
+            case '3':
+                for (let i = 0; i < 6; i++) {
+                    const random = Math.floor(Math.random() * colores.length);
+                    codigo.push(colores[random]);
+                  }
+                  return codigo;
+
+            default:
+
         }
-        return codigo;
       }
 
     let boss = generarBoss();
@@ -55,24 +76,35 @@ const check = document.getElementById('check');
     })
 
     //CREACIÓN DE LOS CUATRO CÍRCULOS INICIALES. ✅
-    for(let i = 0; i < 4; i++){
-        const circulosColores = document.createElement('div');
-        circulosColores.className = 'circulos';
-        circulosColores.addEventListener('click', () => seleccionColor(circulosColores));
-        tablero.appendChild(circulosColores);
+    function crearDivsJugador() {
+     
+        for(let i = 0; i < 4; i++){
+            const circulosColores = document.createElement('div');
+            circulosColores.style.backgroundColor = colores[0];
+            circulosColores.className = 'circulos';
+            circulosColores.addEventListener('click', () => seleccionColor(circulosColores));
+            row.appendChild(circulosColores);
+        }
+        
     }
 
-    //SELECCIÓN DE COLOR.
+    crearDivsJugador();
+
+    //SELECCIÓN DE COLOR. ✅
     const seleccionColor = (circulo) => {
-        const colorActual = circulo.style.backgroundColor;
+        const colorActual = rgbToHex(circulo.style.backgroundColor);
+        // console.log(colorActual)
         const indice = colores.indexOf(colorActual);
+        // console.log(indice)
         const nuevoIndice = (indice + 1) % colores.length;
         circulo.style.backgroundColor = colores[nuevoIndice];
     }
 
     //FUNCIÓN CHECKEAR + ASIGNAR A BOTÓN.
 
-    const checkear = () => {
+    document.getElementById('check').addEventListener('click', checkear);
+
+    function checkear () {
         if(turnos <= 0){
             alert('Se acabó el juego! Pa tu casa! 😜');
             alert('El código secreto era: ' + boss.join(', '));
@@ -80,55 +112,80 @@ const check = document.getElementById('check');
             return;
         }
 
-        const adivinar = Array.from(tablero.children).map(circulo => circulo.style.backgroundColor);
+        const adivinar = Array.from(divRow.children).map(circulo => circulo.style.backgroundColor);
         const resultado = obtenerResultado(adivinar);
 
-        //MOSTRAR RESULTADO.
-        const resultadoFila = document.createElement('div');
-        resultadoFila.classList.add('.resultado');
-        tablero.appendChild(resultadoFila);
+        //CREACIÓN NUEVA ROW JUGADOR.
+            // const filaJugador = document.createElement('div');
+            // filaJugador.classList.add('row');
+            // tablero.appendChild(filaJugador);
+        
+            // for(let i = 0; i < 4; i++){
+            //     const circulosColores = document.createElement('div');
+            //     circulosColores.style.backgroundColor = colores[0];
+            //     circulosColores.className = 'circulos';
+            //     circulosColores.addEventListener('click', () => seleccionColor(circulosColores));
+            //     filaJugador.appendChild(circulosColores);
+            // }
 
-        adivinar.forEach(color => {
-            const circuloColor = document.createElement('div');
-            circuloColor.className = 'color';
-            circuloColor.style.backgroundColor = color;
-            resultadoFila.appendChild(circuloColor);
-        });
+        //CREAR NUEVA ROW EN EL DIV RESULTADO.
+            const resultadoFila = document.createElement('div');
+            resultadoFila.classList.add('rowResultado');
+            divResultado.appendChild(resultadoFila);
 
-        resultado.forEach((color, i) => {
-            const circuloResultado = document.createElement('div');
-            circuloResultado.className = 'color';
-            circuloResultado.style.backgroundColor = color;
-            resultadoFila.appendChild(circuloResultado);
-        });
+            //     for(let i = 0; i < 4; i++){
+            //         const circuloResultado = document.createElement('div');
+            //         circuloResultado.className = 'color';
+            //         resultadoFila.appendChild(circuloResultado);
+            //     };
+
+
+            adivinar.forEach(color => {
+                const circuloColor = document.createElement('div');
+                // circuloColor.className = 'circulosResultado';
+                circuloColor.className = 'color';
+                circuloColor.style.backgroundColor = color;
+                resultadoFila.appendChild(circuloColor);
+            });
+
+            resultado.forEach(color => {
+                const circuloColor = document.createElement('div');
+                // circuloColor.className = 'circulosResultado';
+                circuloColor.className = 'color';
+                circuloColor.style.backgroundColor = color;
+                resultadoFila.appendChild(circuloColor);
+            });
 
         //VER SI ES CORRECTO O NO.
-        if(resultado.every(color => color === 'black')){
-            alert('Has ganado, campeón, leyenda, máquina, mastodonte.');
-            resetGame();
-            return;
-        }
-
-        turnos--;
-
-        if(turnos === 0){
-            alert('Se acabó el juego! Pa tu casa! 😜');
-            alert('El código secreto era: ' + boss.join(', '));
-            resetGame();
-        }
-    }
-
-    const obtenerResultado = (res) => {
-        const resultado = [];
-        const copiaResultado = [...boss];
-        res.forEach((color, i) => {
-            if(color === copiaResultado[i]) {
-                resultado.push('black');
-                copiaResultado[i] = null;
+            if(resultado.every(color => color === 'black')){
+                alert('Has ganado, campeón, leyenda, máquina, mastodonte.');
+                resetGame();
+                return;
             }
+
+            turnos--;
+
+            if(turnos === 0){
+                alert('Se acabó el juego! Pa tu casa! 😜');
+                alert('El código secreto era: ' + boss.join(', '));
+                resetGame();
+            }
+        }
+
+        function obtenerResultado(res) {
+            const resultado = [];
+            const copiaResultado = [...boss];
+                res.forEach((color, i) => {
+                    if(color === copiaResultado[i]) {
+                        const circuloResultado = document.createElement('div');
+                        circuloResultado.className = 'color';
+                        resultadoFila.appendChild(circuloResultado);
+                        resultado.push('black');
+                        copiaResultado[i] = null;
+                    }
         })
 
-        res.forEach((color, i) => {
+        res.forEach((color) => {
             const posicion = copiaResultado.indexOf(color);
             if(posicion !== -1) {
                 resultado.push('white');
@@ -142,14 +199,29 @@ const check = document.getElementById('check');
         return resultado;
     }
 
-    check.addEventListener('click', checkear());
+
 
     //REINICIAR JUEGO.
-    const resetGame = () => {
+    function resetGame() {
         boss = generarBoss();
         turnos = 10;
         while (tablero.firstChild) {
             tablero.firstChild.remove();
         }
     }
+
+
+    function rgbToHex(col) {
+        if (col.charAt(0) == "r") {
+          col = col.replace("rgb(", "").replace(")", "").split(",");
+          var r = parseInt(col[0], 10).toString(16);
+          var g = parseInt(col[1], 10).toString(16);
+          var b = parseInt(col[2], 10).toString(16);
+          r = r.length == 1 ? "0" + r : r;
+          g = g.length == 1 ? "0" + g : g;
+          b = b.length == 1 ? "0" + b : b;
+          var colHex = "#" + r + g + b;
+          return colHex;
+        }
+      }
 
