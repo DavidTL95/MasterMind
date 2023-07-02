@@ -12,7 +12,11 @@ let turnos = 0
 
 const tablero = document.getElementById("jugador");
 const divResultado = document.getElementById("resultado");
+const divNombre = document.getElementById("nombre");
 
+//MOSTRAR NOMBRE, DIFUCULTAD.
+
+    divNombre.innerHTML = `Usuario: ${nombre}`;
 
     //CREACIÓN DEL SWITCH PARA ASIGNAR CANTIDAD DE TURNOS Y COLORES DEPENDIENDO DE LA DIFICULTAD. ✅
     switch(dificultad){
@@ -79,7 +83,6 @@ const divResultado = document.getElementById("resultado");
 
         const filaJugador = document.createElement('div');
         filaJugador.classList.add('row');
-        filaJugador.classList.add('activa');
         tablero.appendChild(filaJugador);
      
         for(let i = 0; i < 4; i++){
@@ -117,8 +120,7 @@ const divResultado = document.getElementById("resultado");
             return;
         }
 
-        const ultimaRow = document.getElementsByClassName("activa");
-        const adivinar = Array.from(ultimaRow.children).map(circulo => rgbToHex(circulo.style.backgroundColor));
+        const adivinar = Array.from(tablero.lastChild).map(circulo => rgbToHex(circulo.style.backgroundColor));
         const resultado = obtenerResultado(adivinar);
 
         //CREAR NUEVA ROW EN EL DIV RESULTADO.
