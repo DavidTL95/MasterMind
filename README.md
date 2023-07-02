@@ -32,6 +32,7 @@ Decidí darle una estética ciberpunk, para darle ese toque más futurista a un 
   <img src= "https://github.com/DavidTL95/MasterMind/assets/134488502/78c1c639-116a-40d9-8ed0-c87f4f4999c2"/>
   <img src= "https://github.com/DavidTL95/MasterMind/assets/134488502/59609548-3e20-4554-932f-0baf25869967"/>
   <img src= "https://github.com/DavidTL95/MasterMind/assets/134488502/8016cc8a-987a-413c-a6a5-a620524d6a74"/>
+  <img src= "https://github.com/DavidTL95/MasterMind/assets/134488502/2bd76a0a-ba31-4881-80ba-8e58f4a7ed64"/>
  </div>
 
 ## Vistas
