@@ -41,6 +41,8 @@ Settings
 ![Opciones](https://github.com/DavidTL95/MasterMind/assets/134488502/6f2ca74d-eec5-4fbf-9d17-c52e5d7c4916)
 Game
 ![Juego](https://github.com/DavidTL95/MasterMind/assets/134488502/c504984b-0b92-43c1-9a86-5483f9e7d0cf)
+Game final.
+![Captura](https://github.com/DavidTL95/MasterMind/assets/134488502/eb420448-7ff1-42d3-aaa3-43327b638c49)
 
 ## Licencia
 Este proyecto se encuentra bajo licencia de "David Torrado Lago."
