@@ -10,6 +10,7 @@
     <li><a href="#vistas">Vistas</a></li>
     <li><a href="#licencia">Licencia</a></li>
     <li><a href="#webgrafia">Webgrafia</a></li>
+    <li><a href="#agradecimientos">Agradecimientos</a></li>
     <li><a href="#contacto">Contacto</a></li>
   </ol>
 </details>
@@ -51,6 +52,16 @@ Este proyecto se encuentra bajo licencia de "David Torrado Lago."
 Para conseguir mi objetivo he recopilado información de:
 - [link a documentacion de librerias externas](https://www.w3schools.com)
 - [...](https://stackoverflow.com)
+
+## Agradecimientos:
+
+Agradezco a mis compañeros la ayuda en este proyecto:
+
+- *Álvaro*  
+
+- **Maxi**  
+
+- ***Fran***  
 
 ## Contacto
 
