@@ -83,6 +83,7 @@ const divNombre = document.getElementById("nombre");
 
         const filaJugador = document.createElement('div');
         filaJugador.classList.add('row');
+        filaJugador.setAttribute('id',`${turnos}`);
         tablero.appendChild(filaJugador);
      
         for(let i = 0; i < 4; i++){
@@ -119,8 +120,8 @@ const divNombre = document.getElementById("nombre");
             resetGame();
             return;
         }
-
-        const adivinar = Array.from(tablero.lastChild).map(circulo => rgbToHex(circulo.style.backgroundColor));
+        const rowActive = document.getElementById(`${turnos}`);
+        const adivinar = Array.from(rowActive.children).map(circulo => rgbToHex(circulo.style.backgroundColor));
         const resultado = obtenerResultado(adivinar);
 
         //CREAR NUEVA ROW EN EL DIV RESULTADO.
@@ -135,15 +136,17 @@ const divNombre = document.getElementById("nombre");
             //     };
 
 
-            adivinar.forEach(color => {
-                const circuloColor = document.createElement('div');
-                // circuloColor.className = 'circulosResultado';
-                circuloColor.className = 'color';
-                circuloColor.style.backgroundColor = color;
-                resultadoFila.appendChild(circuloColor);
-            });
+            // adivinar.forEach(color => {
+            //     console.log('a')
+            //     const circuloColor = document.createElement('div');
+            //     // circuloColor.className = 'circulosResultado';
+            //     circuloColor.className = 'color';
+            //     circuloColor.style.backgroundColor = 'black';
+            //     resultadoFila.appendChild(circuloColor);
+            // });
 
             resultado.forEach(color => {
+                console.log('b')
                 const circuloColor = document.createElement('div');
                 // circuloColor.className = 'circulosResultado';
                 circuloColor.className = 'color';
@@ -169,6 +172,7 @@ const divNombre = document.getElementById("nombre");
         //CREACIÓN NUEVA ROW JUGADOR.
             const filaJugador = document.createElement('div');
             filaJugador.classList.add('row');
+            filaJugador.setAttribute('id',`${turnos}`);
             tablero.appendChild(filaJugador);
                 
                 for(let i = 0; i < 4; i++){
