@@ -22,10 +22,6 @@ let coloresGuardados = [];
 
 colorPicker.addEventListener(('change'), (e) => {
 
-    // colores.array.forEach(element => {
-    //     element.style.backgroundColor = e.target.value;
-    // });
-
     if(colores[0].style.backgroundColor === ""){
 
         color1.style.backgroundColor = e.target.value;

@@ -12,11 +12,19 @@ let turnos = 0
 
 const tablero = document.getElementById("jugador");
 const divResultado = document.getElementById("resultado");
-const divNombre = document.getElementById("nombre");
+const pNombre = document.getElementById("pNombre");
+const pDif = document.getElementById("pDificultad");
 
 //MOSTRAR NOMBRE, DIFUCULTAD.
 
-    divNombre.innerHTML = `Usuario: ${nombre}`;
+    pNombre.innerHTML = `Usuario: ${nombre}`;
+    if(dificultad === '1'){
+        pDif.innerHTML = `Dificultad: Fácil`;
+    }else if(dificultad === '2'){
+        pDif.innerHTML = `Dificultad: Medio`;
+    }else{
+        pDif.innerHTML = `Dificultad: Difícil`;
+    }
 
     //CREACIÓN DEL SWITCH PARA ASIGNAR CANTIDAD DE TURNOS Y COLORES DEPENDIENDO DE LA DIFICULTAD. ✅
     switch(dificultad){
@@ -49,14 +57,14 @@ const divNombre = document.getElementById("nombre");
                   return codigo;
 
             case '2':
-                for (let i = 0; i < 5; i++) {
+                for (let i = 0; i < 4; i++) {
                     const random = Math.floor(Math.random() * colores.length);
                     codigo.push(colores[random]);
                   }
                   return codigo;
 
             case '3':
-                for (let i = 0; i < 6; i++) {
+                for (let i = 0; i < 4; i++) {
                     const random = Math.floor(Math.random() * colores.length);
                     codigo.push(colores[random]);
                   }
@@ -129,22 +137,6 @@ const divNombre = document.getElementById("nombre");
             resultadoFila.classList.add('rowResultado');
             divResultado.appendChild(resultadoFila);
 
-            //     for(let i = 0; i < 4; i++){
-            //         const circuloResultado = document.createElement('div');
-            //         circuloResultado.className = 'color';
-            //         resultadoFila.appendChild(circuloResultado);
-            //     };
-
-
-            // adivinar.forEach(color => {
-            //     console.log('a')
-            //     const circuloColor = document.createElement('div');
-            //     // circuloColor.className = 'circulosResultado';
-            //     circuloColor.className = 'color';
-            //     circuloColor.style.backgroundColor = 'black';
-            //     resultadoFila.appendChild(circuloColor);
-            // });
-
             resultado.forEach(color => {
                 console.log('b')
                 const circuloColor = document.createElement('div');
@@ -189,21 +181,22 @@ const divNombre = document.getElementById("nombre");
             const copiaResultado = [...boss];
                 res.forEach((color, i) => {
                     if(color === copiaResultado[i]) {
-                        // const circuloResultado = document.createElement('div');
-                        // circuloResultado.className = 'color';
-                        // resultadoFila.appendChild(circuloResultado);
                         resultado.push('black');
                         copiaResultado[i] = null;
                     }
         })
 
-        res.forEach((color) => {
-            const posicion = copiaResultado.indexOf(color);
-            if(posicion !== -1) {
-                resultado.push('white');
-                copiaResultado[posicion] = null;
-            }
+        boss.forEach(() => {
+            res.forEach((color) => {
+                const posicion = copiaResultado.indexOf(color);
+                if(posicion !== -1) {
+                    resultado.push('white');
+                    copiaResultado[posicion] = null;
+                }
+            })
         })
+
+
 
         while(resultado.length < 4) {
             resultado.push('empty');
@@ -236,4 +229,3 @@ const divNombre = document.getElementById("nombre");
           return colHex;
         }
       }
-
