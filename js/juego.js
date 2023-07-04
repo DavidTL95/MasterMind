@@ -117,7 +117,7 @@ const pDif = document.getElementById("pDificultad");
         circulo.style.backgroundColor = colores[nuevoIndice];
     }
 
-    //FUNCIÓN CHECKEAR + ASIGNAR A BOTÓN.
+    //FUNCIÓN CHECKEAR + ASIGNAR A BOTÓN. ✅
 
     document.getElementById('check').addEventListener('click', checkear);
 
@@ -140,7 +140,6 @@ const pDif = document.getElementById("pDificultad");
             resultado.forEach(color => {
                 console.log('b')
                 const circuloColor = document.createElement('div');
-                // circuloColor.className = 'circulosResultado';
                 circuloColor.className = 'color';
                 circuloColor.style.backgroundColor = color;
                 resultadoFila.appendChild(circuloColor);
@@ -196,17 +195,13 @@ const pDif = document.getElementById("pDificultad");
             })
         })
 
-
-
         while(resultado.length < 4) {
             resultado.push('empty');
         }
         return resultado;
     }
 
-
-
-    //REINICIAR JUEGO.
+    //REINICIAR JUEGO. ✅
     function resetGame() {
         boss = generarBoss();
         turnos = 10;
@@ -214,7 +209,6 @@ const pDif = document.getElementById("pDificultad");
             tablero.firstChild.remove();
         }
     }
-
 
     function rgbToHex(col) {
         if (col.charAt(0) == "r") {
